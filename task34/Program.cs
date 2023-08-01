@@ -9,27 +9,23 @@ class Program
 
         // [345, 897, 568, 234] -> 2
 
-        int n = new Random().Next(100, 1000);
-        int[] array = new int[10];
-        for (int j = 0; j <= array.Length; j++)
+        Random rnd = new Random();
+        int size = 10;
+        int[] array = new int[size];
+        Console.Write($"Заданный массив:  ");
+        for (int i = 0; i <= size; i++)
         {
-            array[j]=n;
-            for (int i = 0; i <= array.Length; i++)
-            {
-                if (array[i] > 100 || array[i] < 1000)
-                {
-                    if (array[i] % 2 == 0)
-                    {
-                        Console.WriteLine($"{i} = {array[i]}");
-                    }
-                }
-            }
+            array[i] = rnd.Next(100, 1000);
+            Console.Write($"{array[i]} ");
         }
-
-
-
-
-
-
+        for (int i = 0; i < size; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                Console.WriteLine($"{array[i]} - положительный член массива ");
+            }
+            Console.WriteLine($"Количество положительных членов заданного массива = {i} ");
+        }
+        Console.WriteLine();
     }
 }
