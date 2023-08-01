@@ -15,21 +15,23 @@ class Program
         int[] array = new int[size];
         int sum = 0;
         Console.Write($"Заданный массив:  ");
-        for (int i = 0; i <= size; i++)
-        {
-            array[i] = rnd.Next();
-            Console.Write($"{array[i]} ");
-        }
         for (int i = 0; i < size; i++)
         {
-            if (array[i] % 2 == 1)
+            array[i] = rnd.Next(1, 10);
+            Console.Write($"{array[i]} ");
+        }
+        Console.WriteLine();
+        for (int i = 0; i < size; i++)
+        {
+            if (i % 2 == 1)
             {
-                Console.WriteLine($"{array[i]} - отрицательный член массива ");
+                Console.WriteLine($"{array[i]} - отрицательный индекс у данного члена массива {i}");
                 sum += array[i];
             }
 
-            Console.WriteLine($"Сумма отрицательных членов заданного массива = {sum} ");
 
         }
+        Console.WriteLine($"Сумма членов заданного массива с отрицательным индексом = {sum} ");
+
     }
 }

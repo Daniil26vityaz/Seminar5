@@ -11,21 +11,24 @@ class Program
 
         Random rnd = new Random();
         int size = 10;
+        int count = 0;
         int[] array = new int[size];
         Console.Write($"Заданный массив:  ");
-        for (int i = 0; i <= size; i++)
+        for (int i = 0; i < size; i++)
         {
             array[i] = rnd.Next(100, 1000);
             Console.Write($"{array[i]} ");
         }
+        Console.WriteLine();
         for (int i = 0; i < size; i++)
         {
             if (array[i] % 2 == 0)
             {
                 Console.WriteLine($"{array[i]} - положительный член массива ");
+                count ++;
             }
-            Console.WriteLine($"Количество положительных членов заданного массива = {i} ");
-        }
+            
+        }Console.WriteLine($"Количество положительных членов заданного массива = {count} ");
         Console.WriteLine();
     }
 }
